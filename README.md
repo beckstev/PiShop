@@ -2,13 +2,17 @@
 This repo includes all ideas and projects for the _Smart Home Raspberry Pi Workshop_.
 If any of you have a __suggestion, problem or an idea__? Feel free to open a new [issue](https://github.com/beckstev/PiShop/issues).
 
-## How to create a new project?
-Simply run:
-`bash create_project.sh PROJECTNAME`
+## Workflow
+To work efficently we should use [milestones](https://github.com/beckstev/PiShop/milestones) and the implemented
+[Project](https://github.com/beckstev/PiShop/projects) function of git.
 
 ## Project ideas
 Before we create a new project folder, we should at ideas
-into the __idear__ folder. 
+into the __idear__ folder.
+
+## How to create a new project?
+Simply run:
+`bash create_project.sh PROJECTNAME`
 
 ## What every project folder should contain?
 This are a few details each project should have.
