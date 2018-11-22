@@ -8,7 +8,7 @@ To work efficently we should use [milestones](https://github.com/beckstev/PiShop
 
 ## Project ideas
 Before we create a new project folder, we should at ideas
-into the __idear__ folder.
+into the __ideas__ folder.
 
 ## How to create a new project?
 Simply run:
