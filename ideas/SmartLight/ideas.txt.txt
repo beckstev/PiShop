@@ -1,0 +1,6 @@
+Some ideas for a smart light pi (using phillips hue):
+
+- gestenerkennung
+- notifications, alarms
+- better smarter wecker
+- learn how to programm own switch
