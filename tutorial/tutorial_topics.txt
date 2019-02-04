@@ -1,3 +1,5 @@
+- Grundsaätzliche Vorstellung des Rasp Berry Pie
 - GPIO
 - gphoto2
 - FLASK (or something equal)
+- vllt. Bibliothek für SmartMirror
