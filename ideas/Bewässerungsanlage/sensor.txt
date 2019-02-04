@@ -1,0 +1,3 @@
+https://tutorials-raspberrypi.de/raspberry-pi-giessomat-kapazitiver-erdfeuchtigkeitssensor/
+
+https://sgerber.de/2014/08/kapazitiver-feuchtigkeitssensor-fuer-blumenerde/
