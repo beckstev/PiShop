@@ -1,0 +1,7 @@
+- Wasserreservoir was automatisch geöffnet wird, wenn Blumen zu wenig wasser haben
+- Dazu Ansteuerung eines Feuchtigkeitssensors
+- Steuerung für einzelne Blumen
+
+- Anpassung auf botanische Empfehlungen
+- App Implementierung
+- Telegramimplementierung

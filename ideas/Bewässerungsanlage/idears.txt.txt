@@ -1,6 +1,0 @@
-- Wasserreservoir was automatisch geöffnet wird, wenn Blumen zu wenig wasser haben
-- Steuerung für einzelnene Blumen
-- Anpassung auf botanische Empfehlungen
-- Motorsteuerung 
-- App implementierung
-- Telegramimplementierung

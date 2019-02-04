@@ -1,0 +1,6 @@
+### Bauteile Smartlight
+
+- Phillips hue Lampen und Bridge
+- Rasp Berry Pie
+- Rotor/Drehschalter (eigener Dimmer)
+- Abstandssensor, z.B. Ultraschall oder Electric Near Field Sensor

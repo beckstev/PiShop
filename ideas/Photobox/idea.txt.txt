@@ -1,7 +1,0 @@
-- fernauslöser
-- Bilderdarstellung 
-- Fehlerbehandlung 
-- Telegram/Whatsapp Support
-- Nutzerdatenstatistik
-- Gesichtserkennung 
-- Led-Indicatoren, Led Anzeige die angibt wie viele Bilder geschossen wurden 

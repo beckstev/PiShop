@@ -1,0 +1,13 @@
+### Bewaesserungsanlage Bauteile
+
+- Raspberry Pie
+- Feuchtigkeitssensor (kapazitiv oder ohmsch)
+- Wasserbehälter
+- Schlauch
+- wasserdichtes Klebeband
+- magnetisches Ventil
+- Kabel
+- Relay
+- Planze zum Testen? :)
+- Abstandssensor, z.B. Ultraschall (Add-on als Fuellstandsanzeiger, je nach Wasserbehaelter overkill)
+- ggf. Platinen

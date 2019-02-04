@@ -1,5 +1,0 @@
-- LCD Monitor
-- Raspberry Pi
-- Wood
-- sensors
-- adapters ?

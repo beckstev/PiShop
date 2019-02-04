@@ -1,0 +1,8 @@
+- Per Fernauslöser ein Foto schießen
+- Auf Monitor Bild der Kamera anzeigen
+- LED-Indicatoren, LED Anzeige die angibt wie viele Bilder geschossen wurden
+
+- Fehlerbehandlung
+- Telegram/Whatsapp Support
+- Nutzerdatenstatistik
+- Gesichtserkennung

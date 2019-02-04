@@ -1,0 +1,10 @@
+### Bauteile Photobox
+
+- Kamera
+- LED's und Widerstaende (Anzeige, ob Photobox bereit für neues Foto)
+- Presenter zur Steuerung
+- USB-Stick (Speichern der Fotos)
+- Rasp Berry Pie
+- Holz/Karton fuer Box
+- Monitor zum Anzeigen der Bilder
+- Displaykabel

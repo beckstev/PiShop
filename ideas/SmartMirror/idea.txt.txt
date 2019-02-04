@@ -1,8 +1,0 @@
-Eigenschaften des Smart Mirrors:
-
-- Bus und Bahn Daten
-- Zitat des Tages 
-- Erkennt ob jemand davor steht oder nicht
-- Kalender funktion + Reminder
-- BirthdayReminder
-- 

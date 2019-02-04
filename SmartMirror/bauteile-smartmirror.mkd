@@ -1,0 +1,13 @@
+### Smart Mirror Bauteile
+
+- Rasp Berry Pie
+- Monitor mit seitlichen Anschluessen
+- halbdurchlaessigen Spiegel in Monitorgroesse
+- Holz fuer den Rahmen
+- Display-Kabel
+- Raspberry-Stromkabel
+- Abstandssensor, z.B. Ultraschall (Spiegel nur smart, wenn jemand davor steht)
+- Farbe
+- Leim
+- Schrauben
+- ggf. Platinen, Widerstaende, kleine Kabel
