@@ -41,6 +41,20 @@ def request_weather_data(city_id):
 
 def accumulate_weather_data(weather_data):
     '''Processes the imported weather data to cumulated statistic'''
+    timestamps = []
+    temp_max = []
+    temp_min = []
+    icon = []
+    for forecast in weather_data['list']:
+        timestamps.append(datetime.strptime(forecast['dt_txt'], '%Y-%m-%d %H:%M:%S'))
+        temp_max.append(forecast['main']['temp_max'])
+        temp_min.append(forecast['main']['temp_min'])
+        icon.append(forecast['weather'][0]['icon'])
+    # forecast for today saved in index 0-8
+    # TODO: Hier weiter
+    # forecast for tomorrow saved in index 9-16
+
+    # TODO: Temperaturen von Kelvin in Celsius umrechnen
     return None
 
 #  city_name = input('Which is the city you are interested in? ')
@@ -49,4 +63,5 @@ dortmund_id = 2935517
 #  request_weather_data(dortmund_id)
 with open('forecast_{}.json'.format(dortmund_id), 'r') as forecast_data:
     weather_data = json.load(forecast_data)
-pprint(weather_data['list'][0])
+#  pprint(weather_data['list'][0]['dt_txt'])
+accumulate_weather_data(weather_data)
