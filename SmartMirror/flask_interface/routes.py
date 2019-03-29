@@ -1,8 +1,5 @@
 import flask
 from flask_interface import app
-import numpy as np
-
-
 
 
 @app.route('/')
