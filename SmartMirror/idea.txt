@@ -1,8 +1,8 @@
 - Ein Spiegel, welcher Informationen anzeigen kann
-- Einschalten der "Smart"-Funktion durch Abstandssensor
+- Einschalten der "Smart"-Funktion durch Abstandssensor, Ultraschall
 
 Mögliche Anzeigedaten
-- Zitat des Tages
+- Zitat des Tages oder ein Kompliment
 - Wetterdaten
 - Daten über örtlichen Nahverkehr
 - Kalenderinformationen, Geburtstagserinnerungen
