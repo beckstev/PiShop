@@ -1,4 +1,4 @@
-import RPI.GPIO as PGIO
+import RPi.GPIO as PGIO
 import time
 
 # set pin notation (BOARD/BCM)
