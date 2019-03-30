@@ -3,29 +3,48 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+    <script src="{{url_for('static', filename='dynamic_clock.js')}}"></script>
     <title></title>
   </head>
-  <body>
+  <body onload="startTime()">
+
+
+    <b class=date id='date'></b>
+    <pclass=date></p>
+
+    <b class=clock id='time'></b>
+    <p class=clock></p>
+
     <b class=vrr_api> {{station}} </b>
     {% for item in connections %}
-
     <p class=vrr_api>
-      {{item['arrival_time']}} - {{item['type']}} {{item['line']}} - {{item['direction']}}  +
+      {{item['arrival_time']}} - {{item['type']}} {{item['line']}} - {{item['direction']}}
 
-      {%if item['delay'] == '-9999' %}
+      {% if item['delay'] == '-9999' %}
           <font color="red"> FÄLLT AUS </font>
 
       {% else %}
           {%if item['delay'] != '0' and item['delay'] != '?' %}
-            <font color="red"> {{item['delay']}} </font> min
+            <font color="red"> +{{item['delay']}} </font> min
 
           {% else %}
-            {{item['delay']}} min
+            +{{item['delay']}} min
 
           {% endif %}
-      {%endif%}
+      {% endif %}
     </p>
-    {%endfor%}
+    {% endfor %}
+
+  <b class=google_calendar_api> Today </b>
+  {% for event in events %}
+    <p class=google_calendar_api>
+      {% if event['start_time'] == '' %}
+          <font color="blue"> {{event['title']}}  </font>
+      {% else %}
+        {{event['start_time']}} - {{event['title']}}
+      {% endif %}
+    </p>
+  {% endfor %}
 
   </body>
 </html>

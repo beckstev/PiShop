@@ -1,5 +1,23 @@
 .vrr_api {
   position: relative;
   left: 200mm;
-  top: 15mm;
+  top: 25mm;
+}
+
+.google_calendar_api{
+  position: relative;
+  left: 200mm;
+  top: 60mm;
+}
+
+.clock{
+  position: relative;
+  left: 200mm;
+  top: 10mm;
+}
+
+.date{
+  position: relative;
+  left: 200mm;
+  top: 5mm;
 }
