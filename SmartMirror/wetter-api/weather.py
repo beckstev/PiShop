@@ -4,7 +4,7 @@ import datetime
 #  from json import loads, dumps
 import json
 import os
-from pprint import pprint
+#  from pprint import pprint
 
 today = datetime.date.today()
 today_str = today.strftime(format='%Y-%m-%d')
@@ -125,7 +125,3 @@ def main():
     # since it is not for today and tomorrow but for the next two days
 
     return accumulate_weather_data(weather_forecast)
-
-
-if __name__ == '__main__':
-    pprint(main())
