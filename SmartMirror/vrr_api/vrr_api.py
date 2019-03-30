@@ -30,30 +30,29 @@ def get_station_information(station_name, number_of_connections):
     station_information = get(base_html + '&' + f'limit={number_of_connections}' + '&' + f'name_dm={station_name}').json()
     depature_list = station_information['departureList']
 
-    arrival_time = []
-    direction = []
-    type = []
-    line = []
-    delay = []
+    connections = []
 
     for connection in depature_list:
-        arrival_time.append(connection['dateTime'])
-        direction.append(connection['servingLine']['direction'])
-        type.append(connection['servingLine']['name'])
-        line.append(connection['servingLine']['symbol'])
+        minute_of_arrival = connection['dateTime']['minute']
+        # Add a zero to numbers below ten
+        if int(minute_of_arrival) < 10:
+            minute_of_arrival = '0' + minute_of_arrival
+        time_of_arrival = connection['dateTime']['hour'] + ':' + minute_of_arrival
 
         try:
-            delay.append(connection['servingLine']['delay'])
-
+             delay = connection['servingLine']['delay']
         except KeyError:
-            delay.append('unknown')
+            delay = 'unknown'
 
-    essential_depature_informations = {'arrival_time': arrival_time,
-                                       'direction': direction,
-                                       'type': type, 'line': line,
-                                       'delay': delay}
+        link = {'arrival_time': time_of_arrival,
+                'direction': connection['servingLine']['direction'],
+                'type': connection['servingLine']['name'],
+                'line': connection['servingLine']['symbol'],
+                'delay': delay}
 
-    return essential_depature_informations
+        connections.append(link)
+
+    return connections
 
 
 if __name__ == '__main__':
