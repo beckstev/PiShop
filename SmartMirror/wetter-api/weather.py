@@ -7,7 +7,10 @@ from pprint import pprint
 # API key for my OpenWeatherMap account
 KEY = '816cb137e5f7cb33a9b6c96e757c442e'
 
-#  cities = open('city.list.json').read()
+
+def kelvin2celsius(t_kelvin):
+    return t_kelvin - 272.15
+
 
 def get_city_id(city_name):
     '''Asks for a City name
@@ -33,28 +36,35 @@ def get_city_id(city_name):
 
 def request_weather_data(city_id):
     '''Import the weather data of @city_id from OpenWeatherMap'''
-    weather_data = get('http://api.openweathermap.org/data/2.5/forecast?id='+str(city_id)+'&APPID='+KEY).json()
+    weather_data = get('http://api.openweathermap.org/data/2.5/weather?id='+str(city_id)+'&APPID='+KEY).json()
+    weather_forecast = get('http://api.openweathermap.org/data/2.5/forecast?id='+str(city_id)+'&APPID='+KEY).json()
+    with open('weather_{}.json'.format(city_id), 'w') as today:
+        today.write(json.dumps(weather_data))
     with open('forecast_{}.json'.format(city_id), 'w') as forecast:
-        forecast.write(json.dumps(weather_data))
-    return weather_data
+        forecast.write(json.dumps(weather_forecast))
+    return weather_data, weather_forecast
 
 
-def accumulate_weather_data(weather_data):
+def accumulate_weather_data(weather_data, weather_forecast):
     '''Processes the imported weather data to cumulated statistic'''
+    # forecast for tomorrow saved in index 9-16
     timestamps = []
     temp_max = []
     temp_min = []
-    icon = []
-    for forecast in weather_data['list']:
+    icons = []
+    aggr_forecast = {}  # aggregated weather data
+    for forecast in weather_forecast['list']:
         timestamps.append(datetime.strptime(forecast['dt_txt'], '%Y-%m-%d %H:%M:%S'))
         temp_max.append(forecast['main']['temp_max'])
         temp_min.append(forecast['main']['temp_min'])
-        icon.append(forecast['weather'][0]['icon'])
-    # forecast for today saved in index 0-8
-    # TODO: Hier weiter
-    # forecast for tomorrow saved in index 9-16
+        icons.append(forecast['weather'][0]['icon'])
+    aggr_forecast['tomorrow'] = timestamps[0].date().strftime(format='%a %d. %b')
+    aggr_forecast['tom_temp_max'] = kelvin2celsius(max(temp_max[0:8]))
+    aggr_forecast['tom_temp_min'] = kelvin2celsius(min(temp_min[0:8]))
+    pprint(icons[0:8])
 
-    # TODO: Temperaturen von Kelvin in Celsius umrechnen
+    # weather for today saved in index 0-8
+    # use weather_data for that
     return None
 
 #  city_name = input('Which is the city you are interested in? ')
@@ -62,6 +72,8 @@ def accumulate_weather_data(weather_data):
 dortmund_id = 2935517
 #  request_weather_data(dortmund_id)
 with open('forecast_{}.json'.format(dortmund_id), 'r') as forecast_data:
-    weather_data = json.load(forecast_data)
-#  pprint(weather_data['list'][0]['dt_txt'])
-accumulate_weather_data(weather_data)
+    weather_forecast = json.load(forecast_data)
+with open('weather_{}.json'.format(dortmund_id), 'r') as today_data:
+    weather_data = json.load(today_data)
+#  pprint(weather_forecast['list'][0]['dt_txt'])
+#  accumulate_weather_data(weather_data, weather_forecast)
