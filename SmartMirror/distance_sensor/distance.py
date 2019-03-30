@@ -1,16 +1,6 @@
-import RPi.GPIO as PGIO
+import RPi.GPIO as GPIO
 import time
 
-# set pin notation (BOARD/BCM)
-GPIO.setmode(GPIO.BOARD)
-
-# set pin numbers
-GPIO_TRIGGER = 12
-GPIO_ECHO = 18
-
-# set gpio direction (IN/OUT)
-GPIO.setup(GPIO_TRIGGER, GPIO.OUT)
-GPIO.setup(GPIO_ECHO, GPIO.IN)
 
 def distance(TRIGGER_PIN, ECHO_PIN):
     '''Send a trigger signal with pin @TRIGGER_PIN and receive the echo with
@@ -42,12 +32,27 @@ def distance(TRIGGER_PIN, ECHO_PIN):
 
 
 def main():
+
+    # set pin notation (BOARD/BCM)
+    GPIO.setmode(GPIO.BOARD)
+    
+    # set pin numbers
+    GPIO_TRIGGER = 12
+    GPIO_ECHO = 18
+    
+    # set gpio direction (IN/OUT)
+    GPIO.setup(GPIO_TRIGGER, GPIO.OUT)
+    GPIO.setup(GPIO_ECHO, GPIO.IN)
+
     try:
         while True:
-            dist = distance()
-            print('Measured Distance = {.1f} cm'.format(dist))
+            dist = distance(GPIO_TRIGGER, GPIO_ECHO)
+            print('Measured Distance = {:.1f} cm'.format(dist))
             time.sleep(1)
     # stop by pressing CTRL+C
     except KeyboardInterrupt:
         print('Measurement stopped by user')
         GPIO.cleanup()
+
+if __name__ == '__main__':
+    main()
