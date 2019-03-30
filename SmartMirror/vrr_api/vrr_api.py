@@ -2,8 +2,6 @@ from requests import get
 from pprint import pprint
 
 
-
-
 def get_station_information(station_name, number_of_connections):
     ''' Function to get the json file from the VRR-API
 
@@ -42,7 +40,7 @@ def get_station_information(station_name, number_of_connections):
         try:
              delay = connection['servingLine']['delay']
         except KeyError:
-            delay = 'unknown'
+            delay = '?'
 
         link = {'arrival_time': time_of_arrival,
                 'direction': connection['servingLine']['direction'],
