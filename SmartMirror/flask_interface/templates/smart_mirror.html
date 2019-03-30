@@ -1,0 +1,31 @@
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+    <title></title>
+  </head>
+  <body>
+    <b class=vrr_api> {{station}} </b>
+    {% for item in connections %}
+
+    <p class=vrr_api>
+      {{item['arrival_time']}} - {{item['type']}} {{item['line']}} - {{item['direction']}}  +
+
+      {%if item['delay'] == '-9999' %}
+          <font color="red"> FÄLLT AUS </font>
+
+      {% else %}
+          {%if item['delay'] != '0' and item['delay'] != '?' %}
+            <font color="red"> {{item['delay']}} </font> min
+
+          {% else %}
+            {{item['delay']}} min
+
+          {% endif %}
+      {%endif%}
+    </p>
+    {%endfor%}
+
+  </body>
+</html>
