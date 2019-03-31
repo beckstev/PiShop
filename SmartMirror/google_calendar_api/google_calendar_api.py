@@ -106,10 +106,14 @@ def get_calander_events_of_the_day(number_of_events):
             time = time_with_seconds.rsplit(':', maxsplit=1)[0]
         else:
             time = ''
-            
+
         event_essential_information.append({'start_time': time,
                                             'start_date': date,
                                             'title': event['summary']})
+    if len(event_essential_information) == 0:
+        event_essential_information.append({'start_time': '',
+                                            'start_date': '',
+                                            'title': 'Keine Termine'})
 
     return event_essential_information
 
