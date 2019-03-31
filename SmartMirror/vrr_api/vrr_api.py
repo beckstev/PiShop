@@ -25,7 +25,7 @@ def get_station_information(station_name, number_of_connections):
 
     base_html = "http://efa.vrr.de/standard/XSLT_DM_REQUEST?language=de&type_dm=stop&mode=direct&dmLineSelectionAll=1&depType=STOPEVENTS&includeCompleteStopSeq=0&useRealtime=1&outputFormat=json"
 
-    station_information = get(base_html + '&' + f'limit={number_of_connections}' + '&' + f'name_dm={station_name}').json()
+    station_information = get(base_html + '&' + 'limit={}'.format(number_of_connections) + '&' + 'name_dm={}'.format(station_name)).json()
     depature_list = station_information['departureList']
 
     connections = []
