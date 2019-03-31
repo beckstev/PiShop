@@ -4,3 +4,9 @@ Some ideas for a smart light pi (using phillips hue):
 - notifications, alarms
 - better smarter wecker
 - learn how to programm own switch
+
+
+Get the id of your Hues
+
+https://www.meethue.com/api/nupnp
+https://github.com/studioimaginaire/phue
