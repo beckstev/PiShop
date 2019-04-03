@@ -9,6 +9,7 @@
 - Abstandssensor, z.B. Ultraschall (Spiegel nur smart, wenn jemand davor steht)
 - Farbe
 - Leim
+- Winkel um den Monitor zu befestigen
 - Doppelseitiges Klebeband
 - Silikon(Um den Spigel zu befestigen)
 - Schrauben
