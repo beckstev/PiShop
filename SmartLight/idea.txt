@@ -10,3 +10,11 @@ Get the id of your Hues
 
 https://www.meethue.com/api/nupnp
 https://github.com/studioimaginaire/phue
+
+We also could offer a remote control of plugs
+
+https://www.amazon.de/Anpro-Empf%C3%A4nger-Superregeneration-Transmitter-Einbrecher/dp/B071J2Z3YK/ref=sr_1_2?_encoding=UTF8&camp=1634&creative=19450&keywords=433+MHz+RF+Set&linkCode=ur2&qid=1554316442&s=gateway&sr=8-2
+
+https://www.amazon.de/gp/product/B001AX8QUM?ie=UTF8&linkCode=as2&camp=1634&creative=6738&tag=754-21&creativeASIN=B001AX8QUM&th=1
+
+https://www.slideshare.net/tomykoch/einfache-heimautomatisierung-auf-dem-raspberry-pi-mit-python
