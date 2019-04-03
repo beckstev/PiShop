@@ -4,3 +4,4 @@
 - Rasp Berry Pie
 - Rotor/Drehschalter (eigener Dimmer)
 - Abstandssensor, z.B. Ultraschall oder Electric Near Field Sensor
+- Mikrofon um Klatschsensoren zu bauen
