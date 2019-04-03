@@ -1,2 +1,7 @@
 https://www.makeuseof.com/tag/6-best-raspberry-pi-smart-mirror-projects-weve-seen-far/
 https://www.youtube.com/watch?v=aa3VVZA0e5Y
+https://glancr.de/development/test-spionspiegel-fuer-smart-mirrors/
+
+Hier könnte man die Spiegel kaufen:
+https://www.glas-star.de/spionspiegelnachmass/chrome-spy-spiegel/
+https://www.myspiegel.de/spionspiegel-pg-2102.html?gclid=EAIaIQobChMIqK2Jpca04QIVS0PTCh3YagjiEAAYASAAEgJsovD_BwE
