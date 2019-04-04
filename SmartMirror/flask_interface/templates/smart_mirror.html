@@ -46,5 +46,17 @@
     </p>
   {% endfor %}
 
+  <b class=weather_api> Weather</b>
+    {% for forecast in forecasts %}
+      <p class=weather_api>
+        <p class=weather_api>
+          {{forecast['day']}}: <pre class=weather_api>{{forecast['temp_min']}}  -  {{forecast['temp_max']}} &degC </pre>
+        </p>
+        {% for icon in forecast['icons'] %}
+        <img class=weather_api height=60 width=60 src="{{url_for('static', filename=icon)}}">
+        {% endfor %}
+        <p class=weather_api><pre class=weather_api>   9      12       15     18 Uhr</pre></p>
+    {% endfor %}
+
   </body>
 </html>

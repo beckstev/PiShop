@@ -10,6 +10,12 @@
   top: 60mm;
 }
 
+.weather_api{
+  position: relative;
+  left: 120mm;
+  top: 10mm;
+}
+
 .clock{
   position: relative;
   left: 200mm;

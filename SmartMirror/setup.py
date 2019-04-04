@@ -8,7 +8,13 @@ setup(name='vrr_api',
       packages=['vrr_api'])
 
 setup(name='google_calendar_api',
-      version='0.9',
+      version='1.0',
       description='Use the google calander api to get the events of the day',
       author='Google, Karl Schiller & Steven Becker',
       packages=['google_calendar_api'])
+
+setup(name='weather_api',
+      version='0.9',
+      description='Use a weather api to display a weater forecast',
+      author='Karl Schiller & Steven Becker',
+      packages=['weather_api'])
