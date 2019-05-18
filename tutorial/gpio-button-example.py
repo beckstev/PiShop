@@ -18,9 +18,9 @@ def swLed(ev=None):
     Led_status = not Led_status
     GPIO.output(LedPin, Led_status)  # switch led status(on-->off; off-->on)
     if Led_status == 1:
-        print 'led off...'
+        print('led off...')
     else:
-        print '...led on'
+        print('...led on')
 
 def loop():
     GPIO.add_event_detect(BtnPin, GPIO.FALLING, callback=swLed, bouncetime=200)
