@@ -24,6 +24,35 @@ import RPi.GPIO as GPIO
     #  bridge.set_light(light_id=lamp, parameter='on', value=not status)
 
 
+def distance(TRIGGER_PIN, ECHO_PIN):
+    '''Send a trigger signal with pin @TRIGGER_PIN and receive the echo with
+    @ECHO_PIN
+    RETURN      distance in centimeter'''
+    # set trigger pin to HIGH
+    GPIO.output(TRIGGER_PIN, True)
+
+    # set trigger pin after 0.01ms to LOW
+    time.sleep(0.00001)
+    GPIO.output(TRIGGER_PIN, False)
+
+    t_start = time.time()
+    t_stop = time.time()
+
+    # save start time
+    while GPIO.input(ECHO_PIN) == 0:
+        t_start = time.time()
+
+    # save time of arrival
+    while GPIO.input(ECHO_PIN) == 1:
+        t_stop = time.time()
+
+    t_elapsed = t_stop - t_start
+
+    # muliply with speed of sound (34300 cm/s)
+    # divide by half, because there and back
+    return (t_elapsed * 34300)/2
+
+
 def setup(GPIO_TRIGGER, GPIO_ECHO):
     # set pin notation (BOARD/BCM)
     GPIO.setmode(GPIO.BOARD)
@@ -33,7 +62,7 @@ def setup(GPIO_TRIGGER, GPIO_ECHO):
     GPIO.setup(GPIO_ECHO, GPIO.IN)
 
 
-if __name__ == '__main__':
+def main():
 
     path = os.getcwd() + '/hue_id.txt'
 
@@ -52,18 +81,31 @@ if __name__ == '__main__':
         print(ioerr)  # file hue_id.txt does not exist
         exit()
 
+    # turn on light 2
+    b.set_light(2, 'on', True)
+    b.set_light(2, 'bri', 254)
+
     try:
         while True:
-            # TODO
+            dist = distance(GPIO_TRIGGER, GPIO_ECHO)
+            if dist <= 20:
+                bri = 73/5 * dist  # new brightness
+                b.set_light(2, 'bri', bri)
             time.sleep(1)
+    # stop by pressing CTRL+C
     except KeyboardInterrupt:
         print('Thanks for using phillips hue')
+        b.set_light(2, 'on', False)
         GPIO.cleanup()
 
 
     #  pprint(b.get_api())
-    b.set_light(light_id=2, parameter='on', value=True)
-    b.set_light(2, 'bri', 254)  # brightness beween 0 and 254, note: 0 is not off
-    time.sleep(2)
-    b.set_light(light_id=2, parameter='bri', value=10, transitiontime=300)
-    b.set_light(2, 'on', False)
+    #  b.set_light(light_id=2, parameter='on', value=True)
+    #  b.set_light(2, 'bri', 254)  # brightness beween 0 and 254, note: 0 is not off
+    #  time.sleep(2)
+    #  b.set_light(light_id=2, parameter='bri', value=10, transitiontime=300)
+    #  b.set_light(2, 'on', False)
+
+
+if __name__ == '__main__':
+    main()
