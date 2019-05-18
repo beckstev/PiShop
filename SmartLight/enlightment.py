@@ -4,11 +4,11 @@ import phue
 import RPi.GPIO as GPIO
 #  from pprint import pprint
 
-#  def get_IP(path_to_hue_ip):
-    #  bridge_ip = 0
-    #  with open(path_to_hue_ip, 'r') as f:
-        #  bridge_ip = f.readline()[:-1]  # [:-1] to cut '\n'
-    #  return bridge_ip
+def get_IP(path_to_hue_ip):
+    bridge_ip = 0
+    with open(path_to_hue_ip, 'r') as f:
+        bridge_ip = f.readline()[:-1]  # [:-1] to cut '\n'
+    return bridge_ip
 
 
 #  def connect(bridge_IP):
@@ -65,6 +65,7 @@ def setup(GPIO_TRIGGER, GPIO_ECHO):
 def main():
 
     path = os.getcwd() + '/hue_id.txt'
+    max_dist = 40
 
     # set pin numbers
     GPIO_TRIGGER = 12
@@ -88,10 +89,12 @@ def main():
     try:
         while True:
             dist = distance(GPIO_TRIGGER, GPIO_ECHO)
-            if dist <= 20:
-                bri = 73/5 * dist  # new brightness
-                b.set_light(2, 'bri', bri)
-            time.sleep(1)
+            print(dist)
+            if dist <= max_dist:
+                bri = 254 / max_dist * dist  # new brightness
+                print(bri)
+                b.set_light(2, 'bri', int(bri))
+            time.sleep(0.5)
     # stop by pressing CTRL+C
     except KeyboardInterrupt:
         print('Thanks for using phillips hue')
