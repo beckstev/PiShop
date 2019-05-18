@@ -1,3 +1,4 @@
+# to use the .flaskenv, install pip install python-dotenv
 from flask import Flask
 from flask import render_template
 
