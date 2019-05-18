@@ -47,8 +47,13 @@ def main():
     try:
         while True:
             dist = distance(GPIO_TRIGGER, GPIO_ECHO)
+            if dist <=20:
+                # max brightness (254) at a distance of 20 cm
+                new_brigthnes = 73/5 * dist
+                b.set_light(2, 'bri', new_brightness)
+                    
             print('Measured Distance = {:.1f} cm'.format(dist))
-            time.sleep(1)
+            time.sleep(2)
     # stop by pressing CTRL+C
     except KeyboardInterrupt:
         print('Measurement stopped by user')
