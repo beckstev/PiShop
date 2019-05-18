@@ -116,7 +116,7 @@ def clean_build(path_to_forecast_json):
 
     # delete every other json file
     for item in files:
-        os.remove(path_to_forecast_json + item)
+        os.remove(path_to_forecast_json + '/' + item)
     return None
 
 
