@@ -1,2 +1,2 @@
 FLASK_APP=webinterface.py
-FLASK_DEBUG=True
+FLASK_DEBUG=False
