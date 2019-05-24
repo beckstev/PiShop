@@ -13,13 +13,15 @@ number_of_todays_events = 4
 dortmund_id = 2935517
 path_to_weather_pictograms = 'weather_pictograms/'
 
+
 @app.before_first_request
 def init_app():
     start_smart_mirror_updater()
 
+
 def start_smart_mirror_updater():
     """ A self starting thread to update the gallery each T seconds. """
-    t = threading.Timer(2.0, start_smart_mirror_updater)
+    t = threading.Timer(10.0, start_smart_mirror_updater)
     t.daemon = True
     t.start()
 
